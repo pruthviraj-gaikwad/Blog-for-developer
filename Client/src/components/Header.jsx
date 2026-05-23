@@ -37,7 +37,7 @@ function Header() {
         </Button>
 
         <Link to='/sign-in'>
-          <Button color='purple' pill>
+          <Button color='purple' pill outline>
             Sign In
           </Button>
         </Link>
