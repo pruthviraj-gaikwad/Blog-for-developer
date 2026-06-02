@@ -32,6 +32,6 @@ app.use((err, req, res, _next) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("app is listening on 3000");
+app.listen(process.env.BACKEND_PORT, () => {
+  console.log(`app is listening on ${process.env.BACKEND_PORT}`);
 });
