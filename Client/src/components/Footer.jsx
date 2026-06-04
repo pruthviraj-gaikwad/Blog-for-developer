@@ -30,7 +30,7 @@ function Footer() {
               <span className="px-2 py-1 bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white">
                 pruthvi&apos;s
               </span>
-              Blog
+              <span className="text-light-text dark:text-dark-text">Blog</span>
             </Link>
           </div>
 

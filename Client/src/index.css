@@ -1,3 +1,32 @@
 @import "tailwindcss";
 @import "flowbite-react/plugin/tailwindcss";
 @source "../.flowbite-react/class-list.json";
+
+@theme {
+    --dark-mode: selector;
+    --color-brand-primary: var(--color-indigo-500);
+    --color-brand-secondary: var(--color-purple-500);
+    --color-brand-accent: var(--color-pink-500);
+
+    /* Deep Dark Mode Background */
+    --color-dark-bg: rgb(15, 23, 42);
+    --color-dark-surface: rgb(30, 41, 59);
+    --color-dark-border: rgb(51, 65, 85);
+    --color-dark-text: rgb(226, 232, 240);
+    --color-dark-text-muted: rgb(148, 163, 184);
+
+    /* Clean Light Mode Colors */
+    --color-light-bg: rgb(255, 255, 255);
+    --color-light-surface: rgb(248, 250, 252);
+    --color-light-border: rgb(226, 232, 240);
+    --color-light-text: rgb(15, 23, 42);
+    --color-light-text-muted: rgb(71, 85, 105);
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+    body {
+        @apply bg-light-bg text-light-text dark:bg-dark-bg dark:text-dark-text transition-colors duration-300;
+    }
+}

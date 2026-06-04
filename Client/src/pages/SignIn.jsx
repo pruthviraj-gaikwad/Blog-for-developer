@@ -51,10 +51,12 @@ function SignIn() {
             <span className="rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-3 py-1 text-white">
               pruthvi's
             </span>
-            <span className="ml-1 text-slate-900 ">Blog</span>
+            <span className="ml-1 text-light-text dark:text-dark-text">
+              Blog
+            </span>
           </Link>
 
-          <p className="mt-4 max-w-md text-slate-600 dark:text-slate-400">
+          <p className="mt-4 max-w-md text-light-text-muted dark:text-dark-text-muted">
             This is a demo project. You can sign up with your email and password
             to start creating and sharing blogs.
           </p>
@@ -64,27 +66,27 @@ function SignIn() {
         <div className="w-full">
           <form className="space-y-5" onSubmit={handleSubmit}>
             <div>
-              <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
+              <label className="mb-2 block text-sm font-medium text-light-text dark:text-dark-text">
                 Your email
               </label>
               <input
                 type="email"
                 id="email"
                 placeholder="name@example.com"
-                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 dark:border-slate-600 dark:bg-slate-800 dark:text-white dark:placeholder:text-slate-500"
+                className="w-full rounded-lg border border-light-border bg-light-surface px-4 py-3 text-light-text placeholder:text-light-text-muted focus:border-brand-secondary focus:outline-none focus:ring-2 focus:ring-brand-secondary/20 dark:border-dark-border dark:bg-dark-surface dark:text-dark-text dark:placeholder:text-dark-text-muted"
                 onChange={handleChange}
               />
             </div>
 
             <div>
-              <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
+              <label className="mb-2 block text-sm font-medium text-light-text dark:text-dark-text">
                 Your password
               </label>
               <input
                 type="password"
                 id="password"
                 placeholder="Enter password"
-                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 dark:border-slate-600 dark:bg-slate-800 dark:text-white dark:placeholder:text-slate-500"
+                className="w-full rounded-lg border border-light-border bg-light-surface px-4 py-3 text-light-text placeholder:text-light-text-muted focus:border-brand-secondary focus:outline-none focus:ring-2 focus:ring-brand-secondary/20 dark:border-dark-border dark:bg-dark-surface dark:text-dark-text dark:placeholder:text-dark-text-muted"
                 onChange={handleChange}
               />
             </div>
@@ -104,11 +106,11 @@ function SignIn() {
               )}
             </button>
             <OAuth />
-            <p className="text-sm text-slate-600 dark:text-slate-400">
+            <p className="text-sm text-light-text-muted dark:text-dark-text-muted">
               Don't have an account?{" "}
               <Link
                 to="/sign-up"
-                className="font-medium text-blue-600 hover:underline dark:text-blue-400"
+                className="font-medium text-brand-primary hover:underline dark:text-brand-secondary"
               >
                 Sign Up
               </Link>
