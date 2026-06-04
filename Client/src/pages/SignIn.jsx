@@ -7,6 +7,7 @@ import {
   signInSuccess,
   signInFailure,
 } from "../redux/user/userSlice";
+import OAuth from "../components/OAuth";
 
 function SignIn() {
   const [formData, setFormData] = useState({});
@@ -102,6 +103,7 @@ function SignIn() {
                 "Sign In"
               )}
             </button>
+            <OAuth />
             <p className="text-sm text-slate-600 dark:text-slate-400">
               Don't have an account?{" "}
               <Link

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Alert, Spinner } from "flowbite-react";
-
+import OAuth from "../components/OAuth";
 function SignUp() {
   const [formData, setFormData] = useState({});
   const [errorMessage, setErrorMessage] = useState(null);
@@ -112,6 +112,7 @@ function SignUp() {
                 "Sign Up"
               )}
             </button>
+            <OAuth />
             <p className="text-sm text-slate-600 dark:text-slate-400">
               Have an account?{" "}
               <Link
