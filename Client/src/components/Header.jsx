@@ -1,17 +1,22 @@
 import {
   Button,
+  Dropdown,
+  DropdownHeader,
+  DropdownItem,
   Navbar,
   NavbarCollapse,
   NavbarLink,
   NavbarToggle,
   TextInput,
-} from 'flowbite-react';
-import { Link, useLocation } from 'react-router-dom';
-import { AiOutlineSearch } from 'react-icons/ai';
-import { FaMoon } from 'react-icons/fa';
+} from "flowbite-react";
+import { Link, useLocation } from "react-router-dom";
+import { AiOutlineSearch } from "react-icons/ai";
+import { FaMoon } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 function Header() {
   const { pathname } = useLocation();
+  const { currentUser } = useSelector((state) => state.user);
   return (
     <Navbar className="border-b-2">
       <Link
@@ -41,23 +46,49 @@ function Header() {
         <Button className="w-12 h-10 hidden sm:inline" color="gray" pill>
           <FaMoon />
         </Button>
-
-        <Link to="/sign-in">
-          <Button color="purple" pill outline>
-            Sign In
-          </Button>
-        </Link>
+        {currentUser ? (
+          <Dropdown
+            arrowIcon={false}
+            inline
+            label={
+              <img
+                src={currentUser.photoURL}
+                alt="profile"
+                className="w-9 h-9 rounded-full cursor-pointer hover:opacity-95"
+              />
+            }
+          >
+            <DropdownHeader className="hover:bg-gray-200 dark:hover:bg-gray-700">
+              <span className="block text-sm">@{currentUser.username}</span>
+              <span className="block text-sm font-medium truncate">
+                {currentUser.email}
+              </span>
+            </DropdownHeader>
+            <Link to="/dashboard?tab=profile">
+              <DropdownItem>Profile</DropdownItem>
+            </Link>
+            <Link to="/sign-in">
+              <DropdownItem>Sign out</DropdownItem>
+            </Link>
+          </Dropdown>
+        ) : (
+          <Link to="/sign-in">
+            <Button color="purple" pill outline>
+              Sign In
+            </Button>
+          </Link>
+        )}
         <NavbarToggle />
       </div>
 
       <NavbarCollapse>
-        <NavbarLink active={pathname === '/'} as={Link} to="/">
+        <NavbarLink active={pathname === "/"} as={Link} to="/">
           Home
         </NavbarLink>
-        <NavbarLink active={pathname === '/about'} as={Link} to="/about">
+        <NavbarLink active={pathname === "/about"} as={Link} to="/about">
           About
         </NavbarLink>
-        <NavbarLink active={pathname === '/project'} as={Link} to="/project">
+        <NavbarLink active={pathname === "/project"} as={Link} to="/project">
           Project
         </NavbarLink>
       </NavbarCollapse>
